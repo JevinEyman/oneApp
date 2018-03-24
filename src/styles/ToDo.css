@@ -1,0 +1,37 @@
+.todoListMain {
+    height: 250px;
+    width: 250px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.header {
+    z-index: 1;
+}
+.enterTask {
+    background-color: transparent;
+    width: 73%;
+    margin-left:1%;
+    margin-right: 1%;
+    margin-top: 1%;
+    z-index: 1;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.addTask {
+    width: 24%;
+    margin-right:1%;
+    margin-top: 1%;
+    background-color: rgb(255, 81, 0);
+    color: white;
+    border-radius: 3px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.addTitle {
+    background-color: transparent;
+    width: 100%;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}

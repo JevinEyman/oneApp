@@ -1,0 +1,66 @@
+.button {
+    position: absolute; 
+    right: 1%;
+    background: rgba(8, 156, 182, 0.1);
+    background-color: rgba(255, 81, 0, 0.692);
+    color: rgb(255, 255, 255);
+    font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+    height:88vh;   
+}
+
+.card {
+    left: 0px;
+    right: 0px;
+    width: 100%;
+}
+
+.card-header {
+    color: black;
+    background-color: rgba(217, 221, 226, 0.2);
+    font-family: "Times New Roman", Times, serif;
+    width: 100%;
+}
+
+.card-body {
+    height: 185px;
+    overflow: auto;
+    background: rgba(8, 156, 182, 0.1);
+    font-family: "Times New Roman", Times, serif;
+    width: 100%;
+}
+
+#todo {
+    margin-right:3px;
+}
+
+#addtodo {
+    position: absolute; 
+    bottom: 1%;  
+    height: 30px;
+    width: 87%; 
+    line-height: 15px;
+    text-align: center;
+    background: rgba(8, 156, 182, 0.1);
+    background-color: rgba(255, 81, 0, 0.692);
+    color: rgb(255, 255, 255);
+    font-family: "Times New Roman", Times, serif;
+}
+
+#addtodospan {
+    position: absolute; 
+    right: 1%;
+    top: 20%;
+}
+
+.head {
+    background-color: transparent;
+}
+
+.badge {
+    background: transparent;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+}

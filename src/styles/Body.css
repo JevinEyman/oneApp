@@ -1,0 +1,17 @@
+.canvas {
+    background: rgba(8, 156, 182, 0.1);
+    height: 100%;
+    width: 100%;
+    padding: 20px; 
+    resize: both;
+    overflow: auto;
+}
+     
+#canvas-wrap { 
+    position:relative; 
+
+}
+
+#canvas-wrap canvas {   k n  1
+    z-index:0 
+}

@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+import "../styles/ToDo.css";
+
+class TodoList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state={
+            items: []
+        };
+
+        this.addItem = this.addItem.bind(this);
+    }
+
+    addItem(e) {
+        if (this._inputElement.value !== "") {
+            var newItem = {
+                text: this._inputElement.value,
+                key: Date.now()
+            };
+        
+        this.setState((prevState) => {
+            return {
+                items: prevState.items.concat(newItem)
+            };
+        });
+
+        this._inputElement.value = "";
+        }
+
+        console.log(this.state.items);
+        
+        e.preventDefault();
+    }
+
+    render() {
+        return (
+            <div className="todoListMain">
+                <div className="header">
+                    <form className="entry" onSubmit={this.addItem}>
+                        <input name="title" onChange={this.handleInputChange} type="text" className="addTitle" placeholder="Add Title" />                    
+                        <input ref={ (a) => this._inputElement = a} placeholder="Enter Task" className="enterTask" />
+
+                        <button type="submit" className="addTask">Add</button>
+                    </form>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default TodoList;

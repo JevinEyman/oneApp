@@ -1,0 +1,19 @@
+.dropdown {
+    position: absolute; 
+    right: 1%;
+    border-radius: 3px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 1%;
+}
+
+.notify {
+    color: black;
+}
+
+.navbar {
+    background-color: rgba(217, 221, 226, 0.1);
+    font-family: "Times New Roman", Times, serif;
+}

@@ -1,52 +1,47 @@
 import React, { Component } from 'react';
 import "../styles/ToDo.css";
 
-class TodoList extends Component {
-    constructor(props) {
+export default class ToDoList extends Component {
+    constructor(props){
         super(props);
 
-        this.state={
-            items: []
-        };
-
-        this.addItem = this.addItem.bind(this);
+        this.state = {
+            userInput: '',
+            list: []
+        }
     }
 
-    addItem(e) {
-        if (this._inputElement.value !== "") {
-            var newItem = {
-                text: this._inputElement.value,
-                key: Date.now()
-            };
-        
-        this.setState((prevState) => {
-            return {
-                items: prevState.items.concat(newItem)
-            };
-        });
+    changeUserInput(input){
+        this.setState({
+            userInput: input
+        }, ()=> console.log(input));
+    }
 
-        this._inputElement.value = "";
-        }
+    addToList(input){
+        let listArray = this.state.list
 
-        console.log(this.state.items);
-        
-        e.preventDefault();
+        listArray.push(input);
+
+        this.setState({
+            list: listArray,
+            userIpnut: ''
+        })
     }
 
     render() {
         return (
-            <div className="todoListMain">
-                <div className="header">
-                    <form className="entry" onSubmit={this.addItem}>
-                        <input name="title" onChange={this.handleInputChange} type="text" className="addTitle" placeholder="Add Title" />                    
-                        <input ref={ (a) => this._inputElement = a} placeholder="Enter Task" className="enterTask" />
+            <div className="to-do-list-main">
+                <input 
+                    onChange={ (e)=>this.changeUserInput(e.target.value)}
+                    value={this.state.userInput} 
+                    type="text"
+                />
+                <button className="addTask" onClick={ ()=> this.addToList(this.state.userInput)}>Submit</button>
 
-                        <button type="submit" className="addTask">Add</button>
-                    </form>
-                </div>
+                <ul>
+                    {this.state.list.map( (val)=> <li className="task">{val}</li>)}
+                </ul>
             </div>
-        );
+        )
     }
 }
-
-export default TodoList;

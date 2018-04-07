@@ -1,4 +1,4 @@
-.todoListMain {
+.to-do-list-main {
     height: 250px;
     width: 250px;
     border-style: solid;
@@ -20,7 +20,7 @@
 }
 
 .addTask {
-    width: 24%;
+    width: 25%;
     margin-right:1%;
     margin-top: 1%;
     background-color: rgb(255, 81, 0);
@@ -34,4 +34,13 @@
     width: 100%;
     font-family: "Times New Roman", Times, serif;
     text-align: center;
+}
+
+.task {
+    list-style-type: none;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    margin: 1%;
+    margin-top: 2%;
 }

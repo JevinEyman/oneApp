@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import "../styles/Header.css";
+import Calendar from "./Calendar";
 
-const Header = () => (
+class Header extends Component {
+  onDayClick = (e, day) => {
+    alert(day);
+  }
+  
+  render() {
+    return (
+
   <div className="col-md-2 header">
     <div id="accordion">
  
@@ -90,7 +98,7 @@ const Header = () => (
         </div>
         <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordion">
           <div className="card-body">
-            
+          <Calendar onDayClick={(e, day)=> this.onDayClick(e, day)}/>   
           </div>
         </div>
       </div>
@@ -159,5 +167,9 @@ const Header = () => (
     </div>
   </div>
 );
+
+  }
+
+}
 
 export default Header;

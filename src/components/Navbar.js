@@ -20,14 +20,14 @@ const Navbar = () => (
             <a className="nav-link" href="#">Pricing</a>
           </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Notifications <span className="badge badge-light notify">4</span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a className="dropdown-item" href="#">Action</a>
+              <a className="dropdown-item" href="#">Another action</a>
+              <a className="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
 

@@ -43,9 +43,10 @@
 
 #addtodo {
     position: absolute; 
-    bottom: 1%;  
+    bottom: 1%;
+    left: 5%;  
     height: 30px;
-    width: 87%; 
+    width: 90%; 
     line-height: 15px;
     text-align: center;
     background: rgba(8, 156, 182, 0.1);

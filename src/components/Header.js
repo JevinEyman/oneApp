@@ -24,6 +24,13 @@ class Header extends Component {
       isHidden: !this.state.isHidden
     })
   }
+
+  addButton() {
+    return <button type="button" onClick={this.toggleHidden.bind(this)} className="btn notifications button" id="todo">
+    Profile <span className="badge badge-light ToDoList">9</span>
+    <span className="sr-only">unread messages</span>
+  </button>
+  }
   
   onDayClick = (e, day) => {
     this.setState({
@@ -49,7 +56,7 @@ class Header extends Component {
 
         <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
           <div className="card-body">
-            <div className="container">
+
               <div className="row">
               <button type="button" onClick={this.toggleHidden.bind(this)} className="btn notifications button" id="todo">
                 Profile <span className="badge badge-light ToDoList">9</span>
@@ -64,12 +71,12 @@ class Header extends Component {
               <br />
 
               <div className="row">
-              <button type="button" className="btn notifications addToDoList" id="addtodo">
+              <button type="button" onClick={this.addButton.bind(this)} className="btn notifications addToDoList" id="addtodo">
                 Add To-Do List <span className="badge badge-light ToDoList" id="addtodospan">9</span>
                 <span className="sr-only">unread messages</span>
               </button>
               </div>              
-            </div>
+
 
           </div>
         </div>

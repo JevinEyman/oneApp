@@ -16,3 +16,10 @@
 #canvas-wrap canvas {   k n  1
     z-index:0 
 }
+
+@media(max-width: 1300px) {
+    .canvas {
+        width: 95%;
+        float: right;
+    }
+}

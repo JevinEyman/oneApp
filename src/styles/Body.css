@@ -1,8 +1,9 @@
 .canvas {
     background: rgba(8, 156, 182, 0.1);
     height: 100%;
-    width: 100%;
-    padding: 20px; 
+    width: 99%;
+    padding: 20px;
+    margin-left: 10px; 
     resize: both;
     overflow: auto;
 }

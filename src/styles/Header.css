@@ -69,3 +69,37 @@
     color: white;
     font-family: "Times New Roman", Times, serif;
 }
+
+.modal {
+    z-index: 1;
+    border-style: solid;
+    height: 700px;
+    margin-top: 5%;
+    position: fixed;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    background-color: antiquewhite;
+    max-width: 100%;
+}
+
+.vertical-center-modal {
+    white-space: nowrap;
+  }
+  
+  .vertical-center-modal:before {
+    content: '';
+    display: inline-block;
+  }
+  
+  .vertical-center-modal .ant-modal {
+    display: inline-block;
+  }
+
+  .modalContent {
+      text-align: left;
+  }
+
+  .titleModal {
+      width: 95%;
+  }

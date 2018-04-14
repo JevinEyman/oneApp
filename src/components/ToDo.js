@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../styles/ToDo.css";
+import { Resizable, ResizableBox } from 'react-resizable';
 
 export default class ToDoList extends Component {
     constructor(props){
@@ -24,12 +25,15 @@ export default class ToDoList extends Component {
 
         this.setState({
             list: listArray,
-            userIpnut: ''
+            userInput: '',
         })
     }
 
     render() {
         return (
+
+            <ResizableBox width={200} height={200} minConstraints={[100, 100]} maxConstraints={[300, 300]}>
+
             <div className="to-do-list-main">
                 <input 
                     onChange={ (e)=>this.changeUserInput(e.target.value)}
@@ -39,9 +43,12 @@ export default class ToDoList extends Component {
                 <button className="addTask" onClick={ ()=> this.addToList(this.state.userInput)}>Submit</button>
 
                 <ul>
-                    {this.state.list.map( (val)=> <li className="task">{val}</li>)}
+                    {this.state.list.map( (val) => <li className="task">{val}</li>)}
                 </ul>
             </div>
+
+            </ResizableBox>
+
         )
     }
 }

@@ -1,0 +1,42 @@
+.post-editor {
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: 150px;
+    background-color: transparent;
+}
+
+.post-feed {
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 1%;
+    height: 505px;
+    background-color: transparent;
+    overflow: auto;
+}
+
+.post-body {
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 1%;
+    height: 50px;
+    min-height: 50px;
+    background-color: transparent;
+
+}
+
+.post-editor-button {
+    float: right;
+    margin-top: 1em;
+}
+
+.close {
+    margin-right: 1%;
+}
+
+@media(max-width: 900px) {
+    .post-editor {
+        margin: 1em;
+    }
+}

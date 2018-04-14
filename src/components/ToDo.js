@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../styles/ToDo.css";
+import { Resizable, ResizableBox } from 'react-resizable';
 
 export default class ToDoList extends Component {
     constructor(props){
@@ -24,7 +25,7 @@ export default class ToDoList extends Component {
 
         this.setState({
             list: listArray,
-            userIpnut: ''
+            userInput: '',
         })
     }
 
@@ -38,9 +39,7 @@ export default class ToDoList extends Component {
                 />
                 <button className="addTask" onClick={ ()=> this.addToList(this.state.userInput)}>Submit</button>
 
-                <ul>
-                    {this.state.list.map( (val)=> <li className="task">{val}</li>)}
-                </ul>
+                    {this.state.list.map( (val) => <label className="container task">{val}<input type="checkbox" checked="checked" /><span className="checkmark"></span></label>)}
             </div>
         )
     }

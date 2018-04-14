@@ -1,5 +1,5 @@
 .canvas {
-    background: rgba(8, 156, 182, 0.1);
+    background: #f6f5f3;
     height: 100%;
     width: 99%;
     padding: 20px;
@@ -13,7 +13,7 @@
 
 }
 
-#canvas-wrap canvas {   k n  1
+#canvas-wrap canvas {
     z-index:0 
 }
 

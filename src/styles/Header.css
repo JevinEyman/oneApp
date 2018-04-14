@@ -13,7 +13,8 @@
 }
 
 .header {
-    height:88vh;   
+    height:88vh;
+    background-color: #57575b;
 }
 
 .card {
@@ -23,8 +24,8 @@
 }
 
 .card-header {
-    color: black;
-    background-color: rgba(217, 221, 226, 0.2);
+    color: #3d3d3f;
+    background-color: #97979b;
     font-family: "Times New Roman", Times, serif;
     width: 100%;
 }
@@ -32,7 +33,7 @@
 .card-body {
     height: 220px;
     overflow: auto;
-    background: rgba(8, 156, 182, 0.1);
+    background: #daf1e1;
     font-family: "Times New Roman", Times, serif;
     width: 100%;
 }
@@ -104,3 +105,5 @@
   .titleModal {
       width: 95%;
   }
+
+  

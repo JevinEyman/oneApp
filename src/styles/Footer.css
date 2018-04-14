@@ -3,7 +3,9 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(255, 81, 0);
-    color: white;
+    background-color: #7dce94;
+    color: #f9f8fd;
     text-align: center;
+    z-index: 5;
+    border-top:1px solid #AAAAAA;
 }

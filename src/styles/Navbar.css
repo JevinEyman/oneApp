@@ -16,4 +16,5 @@
 .navbar {
     background-color: rgba(217, 221, 226, 0.1);
     font-family: "Times New Roman", Times, serif;
+    border-bottom:1px solid #AAAAAA;   
 }

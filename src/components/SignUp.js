@@ -24,6 +24,10 @@ class NameForm extends React.Component {
       this.setState({user.name.first: event.target.user.name.first});
     }
 
+    handleChangeFirst(event){
+        this.setState()
+    }
+
     handleChangeLast(event) {
         this.setState({user.name.last: event.target.user.name.last});
       }

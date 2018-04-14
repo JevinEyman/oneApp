@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "../styles/Header.css";
+import ToDoJSON from "./todolist.json"
 import Calendar from "./Calendar";
-import ToDo from "./ToDo";
+import ToDoList from "./ToDo";
+import ToDoButton from "./ToDoButton";
 import DiscussionBoard from "./DiscussionBoard.js"
 import ReactModal from 'react-modal';
 import { Modal, Button } from 'antd';
@@ -12,6 +14,7 @@ class Header extends Component {
     this.state = {
       isHidden: true,
       modal2Visible: false,
+      ToDoJSON,
     }
   }
 
@@ -23,13 +26,6 @@ class Header extends Component {
     this.setState({
       isHidden: !this.state.isHidden
     })
-  }
-
-  addButton() {
-    return <button type="button" onClick={this.toggleHidden.bind(this)} className="btn notifications button" id="todo">
-    Profile <span className="badge badge-light ToDoList">9</span>
-    <span className="sr-only">unread messages</span>
-  </button>
   }
   
   onDayClick = (e, day) => {
@@ -56,22 +52,17 @@ class Header extends Component {
 
         <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
           <div className="card-body">
+              {this.state.ToDoJSON.map(ToDoJSON => (
+                  <ToDoButton
+                    key={ToDoJSON.id}
+                    title={ToDoJSON.title}
+                    id={ToDoJSON.id}
+                  />
+                ))
+              }
 
               <div className="row">
-              <button type="button" onClick={this.toggleHidden.bind(this)} className="btn notifications button" id="todo">
-                Profile <span className="badge badge-light ToDoList">9</span>
-                <span className="sr-only">unread messages</span>
-              </button>
-
-            {!this.state.isHidden && <ToDo />}
-
-              </div>
-
-              <br />
-              <br />
-
-              <div className="row">
-              <button type="button" onClick={this.addButton.bind(this)} className="btn notifications addToDoList" id="addtodo">
+              <button type="button" className="btn notifications addToDoList" id="addtodo">
                 Add To-Do List <span className="badge badge-light ToDoList" id="addtodospan">9</span>
                 <span className="sr-only">unread messages</span>
               </button>

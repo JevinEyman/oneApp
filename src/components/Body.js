@@ -1,18 +1,37 @@
-import React from "react";
+import React, { Component } from "react";
 import "../styles/Body.css";
-import ToDo from "./ToDo.js"
-import Youtube from "./Youtube.js"
+import ToDoList from "./ToDo.js"
+import ToDoJSON from "./todolist.json"
 
 
-const Body = () => (
-    <div className="col">
+
+class Body extends Component {
+    constructor () {
+      super()
+      this.state = {
+        ToDoJSON,
+      }
+    }
+
+    render() {
+        return (
+
+    <div className="col-10">
             <div className="canvas" id="canvas-wrap">
                 <div id="overlay" draggable="true">
-                    <ToDo />                    
+                {this.state.ToDoJSON.map(item => (
+                  <ToDoList
+                    key={item.key}
+                    list={item.list}
+                  />
+                ))
+              }         
                 </div>
                 <canvas id="myCanvas"></canvas>
             </div>
     </div>
 );
+    }
+}
 
 export default Body;

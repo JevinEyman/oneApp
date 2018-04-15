@@ -20,8 +20,8 @@ class Body extends Component {
             <div className="canvas" id="canvas-wrap">
                 <div id="overlay" draggable="true">
                 {this.state.ToDoJSON.map(item => (
-                  <ToDoList
-                    key={item.key}
+                    item.isHidden  && <ToDoList
+                    id={item.id}
                     list={item.list}
                   />
                 ))

@@ -52,19 +52,17 @@ class Header extends Component {
 
         <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
           <div className="card-body">
-              {this.state.ToDoJSON.map(ToDoJSON => (
+              {this.state.ToDoJSON.map(item => (
                   <ToDoButton
-                    key={ToDoJSON.id}
-                    title={ToDoJSON.title}
-                    id={ToDoJSON.id}
+                    title={item.title}
+                    id={item.id}
                   />
                 ))
               }
 
               <div className="row">
               <button type="button" className="btn notifications addToDoList" id="addtodo">
-                Add To-Do List <span className="badge badge-light ToDoList" id="addtodospan">9</span>
-                <span className="sr-only">unread messages</span>
+                Add To-Do List
               </button>
               </div>              
 

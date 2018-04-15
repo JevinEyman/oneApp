@@ -2,10 +2,15 @@
 {
     "id": 1,
     "list": ["help", "work"],
-    "Title": "todo1"
+    "title": "todo1",
+    "isHidden": true,
+    "is_checked": false
+
   }, {
     "id": 2,
     "list": ["help", "hash"],
-    "Title": "todo2"
+    "title": "todo2",
+    "isHidden": true,
+    "is_checked": false
   }
 ]

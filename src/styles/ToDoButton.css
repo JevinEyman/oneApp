@@ -1,14 +1,16 @@
 .button {
     position: absolute; 
-    left: 1%;
-    background: rgba(8, 156, 182, 0.1);
-    background-color: rgba(255, 81, 0, 0.692);
-    color: rgb(255, 255, 255);
+    left: 3%;
+    border-color: rgba(255, 81, 0, 0.692);
+    background-color: transparent;
+    color: black;
     font-family: "Times New Roman", Times, serif;
-    width: 50%;
+    width: 94%;
+    min-height: 30px;
+    text-align: left;
+    margin-top: 0%;
 }
 
-#todo {
-    margin-right:3px;
-    
+.button-row {
+    margin-bottom: 8%;
 }

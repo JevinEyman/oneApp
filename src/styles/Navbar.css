@@ -18,3 +18,16 @@
     font-family: "Times New Roman", Times, serif;
     border-bottom:1px solid #AAAAAA;   
 }
+
+.navbar-brand {
+    position: relative;
+    width: 170px;
+    left: 15px;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand>img {
+    padding: 7px 14px;
+}

@@ -4,15 +4,20 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
 
-const App = () => (
-  <div>
-    <Navbar />
-    <div className="row">
-      <Header />
-      <Body />
-    </div>
-    <Footer />
-  </div>
-);
+export default class App extends React.Component {
 
-export default App;
+	render(){
+		return(
+		  <div>
+		    <Navbar />
+		    <div className="row">
+		      <Header />
+		      <Body />
+		    </div>
+		    <Footer />
+		  </div>
+	  )
+	}
+}
+
+

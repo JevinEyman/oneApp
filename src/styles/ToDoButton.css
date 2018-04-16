@@ -1,0 +1,16 @@
+.button {
+    position: absolute; 
+    left: 3%;
+    border-color: rgba(255, 81, 0, 0.692);
+    background-color: transparent;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    width: 94%;
+    min-height: 30px;
+    text-align: left;
+    margin-top: 0%;
+}
+
+.button-row {
+    margin-bottom: 8%;
+}

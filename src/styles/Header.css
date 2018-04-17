@@ -111,3 +111,7 @@
       color: black;
       z-index: 1;
   }
+
+  .ant-modal-body{
+      height: 100%;
+  }

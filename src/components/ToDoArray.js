@@ -1,6 +1,5 @@
  import React, { Component } from 'react'
 import '../styles/ToDoArray.css'
-import ToDoItem from './ToDoItem.js'
 
 
 export default class ToDoArray extends Component {
@@ -8,20 +7,26 @@ export default class ToDoArray extends Component {
         super(props);
 
         this.state = {
-            listItems: this.props.list
+           
         };
     }
+
+    createList(item){
+    	return ( <li> {item}</li>)
+    }
+
+
     Render(){
+
+    	var rows = this.props.listItems.map(this.createList);
+    	
     	return(
-    		<div>
-	    		{this.state.listItems.map(item =>(
-		    			<ToDoItem
-		    				listItem={item}
-		    			/>
-	    			))
-	    		}
-			</div>
+			<ul>
+				{rows}
+			</ul>
     	)
     }
 
 }
+
+

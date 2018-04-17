@@ -8,10 +8,10 @@ export default class App extends React.Component {
 
 	render(){
 		return(
+			
 		  <div>
 		    <Navbar />
 		    <div className="row">
-		      <Header />
 		      <Body />
 		    </div>
 		    <Footer />

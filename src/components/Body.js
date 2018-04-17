@@ -13,14 +13,21 @@ class Body extends Component {
       }
     }
 
+    showToDoList(){
+
+    }
+
     render() {
         return (
 
-    <div className="col-10">
+
+    <div className="col-12">
+     
             <div className="canvas" id="canvas-wrap">
+            <Header />
                 <div id="overlay" draggable="true">
                 {this.state.ToDoJSON.map(item => (
-                    item.isHidden  && <ToDoList
+              <ToDoList
                     id={item.id}
                     list={item.list}
                   />

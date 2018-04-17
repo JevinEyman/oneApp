@@ -31,10 +31,6 @@ export default class ToDoList extends Component {
     }
 
     addToList(input){
-        let listArray = this.state.ToDoJSON.list
-
-    
-
         this.setState({
             list: ToDoJSON.list,
             userInput: '',
@@ -43,24 +39,24 @@ export default class ToDoList extends Component {
 
     render() {
         return (
-            <div className="to-do-list-main">
-                <input 
-                    onChange={ (e)=>this.changeUserInput(e.target.value)}
-                    value={this.state.userInput} 
-                    type="text"
-                />
-                <button className="addTask" onClick={ ()=> this.addToList(this.state.userInput)}>Submit</button>
+            <div className="to-do-list-main"/>
+            //     <input 
+            //         onChange={ (e)=>this.changeUserInput(e.target.value)}
+            //         value={this.state.userInput} 
+            //         type="text"
+            //     />
+            // //     <button className="addTask" onClick={ ()=> this.addToList(this.state.userInput)}>Submit</button>
 
-                    {this.state.ToDoJSON.map(item => (
-                        <ToDoArray
-                            list={item.list} 
-                            id={item.id}
-                            is_checked={item.is_checked}
-                            onChange={this.toggleCheckbox.bind(this)}
-                        />
-                    ))
-                }              
-            </div>
+            // //         {this.state.ToDoJSON.map(item => (
+            // //             <ToDoArray
+            // //                 list={item.list} 
+            // //                 id={item.id}
+            // //                 is_checked={item.is_checked}
+            // //                 onChange={this.toggleCheckbox.bind(this)}
+            // //             />
+            // //         ))
+            // //     }              
+            // </div>
         )
     }
 }

@@ -5,6 +5,7 @@ import ToDoJSON from "./todolist.json"
 
 
 
+
 class Body extends Component {
     constructor () {
       super()
@@ -27,6 +28,7 @@ class Body extends Component {
                 ))
               }         
                 </div>
+
                 <canvas id="myCanvas"></canvas>
             </div>
     </div>

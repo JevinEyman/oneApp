@@ -4,6 +4,7 @@ import ToDoJSON from "./todolist.json"
 import Calendar from "./Calendar";
 import ToDoList from "./ToDo";
 import ToDoButton from "./ToDoButton";
+import Layout from "./Layout";
 import DiscussionBoard from "./DiscussionBoard.js"
 import ReactModal from 'react-modal';
 import { Modal, Button } from 'antd';
@@ -14,12 +15,17 @@ class Header extends Component {
     this.state = {
       isHidden: true,
       modal2Visible: false,
+      Modal2Visible: false,
       ToDoJSON,
     }
   }
 
   setModal2Visible(modal2Visible) {
     this.setState({ modal2Visible });
+  }
+
+  setModal2Visible(Modal2Visible) {
+    this.setState({ Modal2Visible });
   }
 
   toggleHidden () {
@@ -81,6 +87,11 @@ class Header extends Component {
         </div>
         <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div className="card-body">
+
+              <Button type="primary" onClick={() => this.setModal2Visible(true)}>Chat</Button>
+              <Modal className="modal" wrapClassName="vertical-center-modal" visible={this.state.Modal2Visible} onCancel={() => this.setModal2Visible(false)} footer={null} maskClosable={true}>
+                <Layout />
+              </Modal>
             
           </div>
         </div>
@@ -101,7 +112,7 @@ class Header extends Component {
         </div>
       </div>
 
-      <div className="card">
+      {/* <div className="card">
         <div className="card-header" id="headingSix">
           <h5 className="mb-0">
             <button className="btn collapsed head" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
@@ -117,7 +128,7 @@ class Header extends Component {
               </Modal>
           </div>
         </div>
-      </div>
+      </div> */}
       
       <div className="card">
         <div className="card-header" id="headingSeven">

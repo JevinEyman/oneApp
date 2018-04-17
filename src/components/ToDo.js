@@ -11,7 +11,6 @@ export default class ToDoList extends Component {
 
         this.state = {
             userInput: '',
-            list: [],
             ToDoJSON,
             is_checked: false
         };

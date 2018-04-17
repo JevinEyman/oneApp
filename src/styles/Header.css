@@ -74,14 +74,16 @@
 .modal {
     z-index: 1;
     border-style: solid;
-    height: 700px;
-    margin-top: 5%;
+    height: 90%;
+    margin-top: 3%;
     position: fixed;
     top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);  
-    background-color: antiquewhite;
+    background-color: white;
     max-width: 100%;
+    min-width: 90%;
+    padding-left: 0;
 }
 
 .vertical-center-modal {
@@ -103,4 +105,9 @@
 
   .titleModal {
       width: 95%;
+  }
+
+  .inputChat {
+      color: black;
+      z-index: 1;
   }

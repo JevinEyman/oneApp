@@ -26,13 +26,10 @@ class Body extends Component {
             <div className="canvas" id="canvas-wrap">
             <Header />
                 <div id="overlay" draggable="true">
-                {this.state.ToDoJSON.map(item => (
-              <ToDoList
-                    id={item.id}
-                    list={item.list}
-                  />
-                ))
-              }         
+                
+              <ToDoList/>
+                
+                      
                 </div>
                 <canvas id="myCanvas"></canvas>
             </div>

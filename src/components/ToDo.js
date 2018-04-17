@@ -11,8 +11,7 @@ export default class ToDoList extends Component {
 
         this.state = {
             userInput: '',
-            list: [],
-            ToDoJSON,
+            ArrayOfLists:ToDoJSON,
             is_checked: false
         };
     }
@@ -24,39 +23,45 @@ export default class ToDoList extends Component {
         });
       }
 
-    changeUserInput(input){
-        this.setState({
-            userInput: input,
-        });
+    // changeUserInput(input){
+    //     this.setState({
+    //         userInput: input,
+    //     });
+    // }
+
+    // addToList(input){
+    //     this.setState({
+    //         list: ToDoJSON.list,
+    //         userInput: '',
+    //     })
+    // }
+
+    removeList(ListID){
+
     }
 
-    addToList(input){
-        this.setState({
-            list: ToDoJSON.list,
-            userInput: '',
-        })
+    createRows(items){
+        let rows = items.list.map(item=>(
+            <li onclick={this.toggleCheckbox}> {item.text}</li>
+        ));
+        return rows;
     }
 
+       
     render() {
-        return (
-            <div className="to-do-list-main"/>
-            //     <input 
-            //         onChange={ (e)=>this.changeUserInput(e.target.value)}
-            //         value={this.state.userInput} 
-            //         type="text"
-            //     />
-            // //     <button className="addTask" onClick={ ()=> this.addToList(this.state.userInput)}>Submit</button>
+        var lists = this.state.ArrayOfLists.map(singleList=>(this.createRows(singleList)))
 
-            // //         {this.state.ToDoJSON.map(item => (
-            // //             <ToDoArray
-            // //                 list={item.list} 
-            // //                 id={item.id}
-            // //                 is_checked={item.is_checked}
-            // //                 onChange={this.toggleCheckbox.bind(this)}
-            // //             />
-            // //         ))
-            // //     }              
-            // </div>
+        return (
+            <div>
+                {lists.map((list) =>(
+                    <ToDoArray
+                        list={list}
+                        remove={this.removeList}
+
+                    />
+                    ))
+                }
+            </div>          
         )
     }
 }

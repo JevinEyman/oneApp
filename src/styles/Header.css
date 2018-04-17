@@ -8,11 +8,12 @@
 }
 
 #accordion {
-    width: 250px;
+    width: 117%;
     max-height: 90%;
 }
 
 .header {
+    
     height:88vh;   
 }
 
@@ -43,9 +44,10 @@
 
 #addtodo {
     position: absolute; 
-    bottom: 1%;  
+    bottom: 1%;
+    left: 5%;  
     height: 30px;
-    width: 87%; 
+    width: 90%; 
     line-height: 15px;
     text-align: center;
     background: rgba(8, 156, 182, 0.1);
@@ -69,3 +71,37 @@
     color: white;
     font-family: "Times New Roman", Times, serif;
 }
+
+.modal {
+    z-index: 1;
+    border-style: solid;
+    height: 700px;
+    margin-top: 5%;
+    position: fixed;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    background-color: antiquewhite;
+    max-width: 100%;
+}
+
+.vertical-center-modal {
+    white-space: nowrap;
+  }
+  
+  .vertical-center-modal:before {
+    content: '';
+    display: inline-block;
+  }
+  
+  .vertical-center-modal .ant-modal {
+    display: inline-block;
+  }
+
+  .modalContent {
+      text-align: left;
+  }
+
+  .titleModal {
+      width: 95%;
+  }

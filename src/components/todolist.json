@@ -1,16 +1,22 @@
 [
-{
-    "id": 1,
-    "list": ["help", "work"],
-    "title": "todo1",
-    "isHidden": true,
-    "is_checked": false
-
-  }, {
-    "id": 2,
-    "list": ["help", "hash"],
-    "title": "todo2",
-    "isHidden": true,
-    "is_checked": false
-  }
-]
+  {
+      "list": [
+                  {"is_Checked":true,
+                  "text":"Help"}, 
+                  {"is_Checked":false,
+                  "text":"Work"}
+              ],
+      "userID":1234,
+      "title":"list1"
+  
+    }, {
+      "list": [
+                  {"is_Checked":true,
+                  "text":"Help"}, 
+                  {"is_Checked":false,
+                  "text":"Hash"}
+              ],
+      "userID":4321,
+      "title":"list2"
+    }
+  ]

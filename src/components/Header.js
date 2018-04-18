@@ -8,6 +8,7 @@ import Layout from "./Layout";
 import DiscussionBoard from "./DiscussionBoard.js"
 import ReactModal from 'react-modal';
 import { Modal, Button } from 'antd';
+import Youtube from "./Youtube";
 
 class Header extends Component {
   constructor () {
@@ -140,7 +141,7 @@ class Header extends Component {
         </div>
         <div id="collapseSeven" className="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
           <div className="card-body">
-            
+            <Youtube />
           </div>
         </div>
       </div>

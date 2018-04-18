@@ -11,6 +11,7 @@ class Body extends Component {
       super()
       this.state = {
         ToDoJSON,
+        
       }
     }
 
@@ -20,13 +21,13 @@ class Body extends Component {
     <div className="col-10">
             <div className="canvas" id="canvas-wrap">
                 <div id="overlay" draggable="true">
-                {this.state.ToDoJSON.map(item => (
-                    item.isHidden  && <ToDoList
-                    id={item.id}
-                    list={item.list}
+
+
+                <ToDoList
+                    // id={item.id}
+                    // list={item.list}
                   />
-                ))
-              }         
+                       
                 </div>
 
                 <canvas id="myCanvas"></canvas>

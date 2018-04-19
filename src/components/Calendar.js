@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import moment from 'moment';
 import "../styles/Calendar.css";
 
@@ -81,7 +81,7 @@ export default class Calendar extends React.Component {
         let popup = props.data.map((data) => {
             return (
                 <div key={data}>
-                    <a href="#" onClick={(e)=> {this.onSelectChange(e, data)}}>
+                    <a href="" onClick={(e)=> {this.onSelectChange(e, data)}}>
                         {data}
                     </a>
                 </div>
@@ -184,7 +184,7 @@ export default class Calendar extends React.Component {
 
         let daysInMonth = [];
         for (let d = 1; d <= this.daysInMonth(); d++) {
-            let className = (d == this.currentDay() ? "day current-day": "day");
+            let className = (d === this.currentDay() ? "day current-day": "day");
             daysInMonth.push(
                 <td key={d} className={className} >
                     <span onClick={(e)=>{this.onDayClick(e, d)}}>{d}</span>

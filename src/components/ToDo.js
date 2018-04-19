@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import "../styles/ToDo.css";
-import { Resizable, ResizableBox } from 'react-resizable';
 import ToDoJSON from "./todolist.json"
 
 
@@ -55,7 +54,7 @@ export default class ToDoList extends Component {
                         </input>
                         <button type="submit">Submit</button>
                     </form>
-                        {/* <button onclick={this.removeList}>X</button> */}
+                        {/* <button onClick={this.removeList}>X</button> */}
                         {list.rows}
                     </ul>
                     ))

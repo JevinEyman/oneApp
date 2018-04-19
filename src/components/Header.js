@@ -8,7 +8,6 @@ import Layout from "./Layout";
 import DiscussionBoard from "./DiscussionBoard.js"
 import ReactModal from 'react-modal';
 import { Modal, Button } from 'antd';
-import Youtube from "./Youtube";
 
 class Header extends Component {
   constructor () {
@@ -16,7 +15,6 @@ class Header extends Component {
     this.state = {
       isHidden: true,
       modal2Visible: false,
-      Modal2Visible: false,
       ToDoJSON,
     }
   }
@@ -25,29 +23,25 @@ class Header extends Component {
     this.setState({ modal2Visible });
   }
 
-  setModal2Visible(Modal2Visible) {
-    this.setState({ Modal2Visible });
-  }
-
   toggleHidden () {
     this.setState({
       isHidden: !this.state.isHidden
     })
   }
-  
+
   onDayClick = (e, day) => {
     this.setState({
       isHidden: !this.state.isHidden
     })
     alert(day);
   }
-  
+
   render() {
     return (
 
   <div className="col-md-2 header">
     <div id="accordion">
- 
+
       <div className="card">
         <div className="card-header" id="headingOne">
           <h5 className="mb-0">
@@ -71,7 +65,7 @@ class Header extends Component {
               <button type="button" className="btn notifications addToDoList" id="addtodo">
                 Add To-Do List
               </button>
-              </div>              
+              </div>
 
 
           </div>
@@ -93,25 +87,12 @@ class Header extends Component {
               <Modal className="modal" wrapClassName="vertical-center-modal" visible={this.state.Modal2Visible} onCancel={() => this.setModal2Visible(false)} footer={null} maskClosable={true}>
                 <Layout />
               </Modal>
-            
+
           </div>
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-header" id="headingFour">
-          <h5 className="mb-0">
-            <button className="btn collapsed head" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Calendar
-            </button>
-          </h5>
-        </div>
-        <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-          <div className="card-body">
-          <Calendar onDayClick={(e, day)=> this.onDayClick(e, day)}/>   
-          </div>
-        </div>
-      </div>
+
 
       {/* <div className="card">
         <div className="card-header" id="headingSix">
@@ -130,7 +111,7 @@ class Header extends Component {
           </div>
         </div>
       </div> */}
-      
+
       <div className="card">
         <div className="card-header" id="headingSeven">
           <h5 className="mb-0">
@@ -141,7 +122,7 @@ class Header extends Component {
         </div>
         <div id="collapseSeven" className="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
           <div className="card-body">
-            <Youtube />
+
           </div>
         </div>
       </div>
@@ -156,7 +137,7 @@ class Header extends Component {
         </div>
         <div id="collapseEight" className="collapse" aria-labelledby="headingEight" data-parent="#accordion">
           <div className="card-body">
-            
+
           </div>
         </div>
       </div>

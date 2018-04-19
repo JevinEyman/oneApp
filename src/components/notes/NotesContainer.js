@@ -63,11 +63,11 @@ class NotesContainer extends Component {
         this.noteText.value = "";
     }
 
-    removeNote(noteId) {
-        console.log(noteId);
-        const dbRef = firebase.database.ref(noteId);
-        dbRef.remove();
-    }
+	removeNote(key) {
+		const currentUser = firebase.auth().currentUser;
+		const objRef = firebase.database().ref();
+		objRef.remove();
+	}
     
     render () {
         return (

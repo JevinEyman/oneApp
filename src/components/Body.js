@@ -4,6 +4,9 @@ import ToDoList from "./ToDo.js"
 import ToDoJSON from "./todolist.json"
 import Header from "./Header.js"
 
+import { Route, Link } from 'react-router-dom'
+
+
 
 class Body extends Component {
     constructor () {
@@ -13,15 +16,12 @@ class Body extends Component {
       }
     }
 
-    showToDoList(){
-
-    }
 
     render() {
-        return (
+     const loggedIn = this.props.loggedIn
 
-
-    <div className="col-12">
+      const whatToRender = loggedIn ? (
+        <div className="col-12">
      
             <div className="canvas" id="canvas-wrap">
             <Header />
@@ -33,7 +33,26 @@ class Body extends Component {
                 </div>
                 <canvas id="myCanvas"></canvas>
             </div>
-    </div>
+        </div>
+        ) : (
+        <div>
+        <button className="btn btn-dark">
+          <Link to="/login">
+            Login
+          </Link>
+        </button>
+        <button className="btn btn-warning">
+          <Link to="/signup">
+            Sign Up
+          </Link>
+        </button >
+        </div>
+        )
+
+        return (
+          <div>
+          {whatToRender}
+          </div>
 );
     }
 }

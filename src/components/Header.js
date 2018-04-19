@@ -4,7 +4,7 @@ import ToDoJSON from "./todolist.json"
 import Calendar from "./Calendar";
 import ToDoList from "./ToDo";
 import ToDoButton from "./ToDoButton";
-import DiscussionBoard from "./DiscussionBoard.js"
+
 import ReactModal from 'react-modal';
 import { Modal, Button } from 'antd';
 
@@ -101,23 +101,7 @@ class Header extends Component {
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-header" id="headingSix">
-          <h5 className="mb-0">
-            <button className="btn collapsed head" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-              Discussion Boards
-            </button>
-          </h5>
-        </div>
-        <div id="collapseSix" className="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-          <div className="card-body">
-              <Button type="primary" onClick={() => this.setModal2Visible(true)}>Discussion Board</Button>
-              <Modal className="modal" wrapClassName="vertical-center-modal" visible={this.state.modal2Visible} onCancel={() => this.setModal2Visible(false)} footer={null} maskClosable={true}>
-                <DiscussionBoard />
-              </Modal>
-          </div>
-        </div>
-      </div>
+      
       
       <div className="card">
         <div className="card-header" id="headingSeven">

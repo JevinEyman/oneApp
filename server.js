@@ -28,7 +28,8 @@ app.use(
 		saveUninitialized: false
 	})
 )
-
+app.use(passport.initialize())
+app.use(passport.session())
 
 var router = express.Router();
 
@@ -43,14 +44,9 @@ app.use(function(req, res, next) {
 });
 
 
-require("./routes/apiRoutes.js")(app);
+app.use('/auth', require('./routes/apiRoutes.js'))
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-  useMongoClient: true
-});
 
 
 app.listen(PORT, function() {

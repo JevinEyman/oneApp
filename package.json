@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.4.1",
+    "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "connect-mongo": "^2.0.1",
@@ -14,19 +16,15 @@
     "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-big-calendar": "^0.19.0",
     "react-dom": "^16.2.0",
     "react-infinite-calendar": "^2.3.1",
-    "react-scripts": "1.1.1",
-    "antd": "^3.4.1",
-    "react": "^16.2.0",
-    
-    "react-big-calendar": "^0.19.0",
-    
     "react-modal": "^3.3.2",
     "react-resizable": "^1.7.5",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
     "react-scrollbars": "0.0.5"
   },
   "scripts": {

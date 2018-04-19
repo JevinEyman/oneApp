@@ -1,75 +1,76 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
-class NameForm extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = 
-        {
-            user: {
-                name: {first:'', last:''},
-                email: '',
-                password: ''
-            }
-        };
-  
-      this.handleChangeFirst = this.handleChange.bind(this);
-      this.handleChangeLast = this.handleChange.bind(this);
-      this.handleChangeEmail = this.handleChange.bind(this);
-      this.handleChangePassword = this.handleChange.bind(this);
+class SignupForm extends Component {
+	constructor() {
+		super()
+		this.state = {
+			username: '',
+			password: '',
+			confirmPassword: '',
+			redirectTo: null
+		}
+		this.handleSubmit = this.handleSubmit.bind(this)
+		this.handleChange = this.handleChange.bind(this)
+	}
+	handleChange(event) {
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
+	handleSubmit(event) {
+		event.preventDefault()
+		
+		axios
+			.post('localhost:3000/auth/signup', {
+				username: this.state.username,
+				password: this.state.password
+			})
+			.then(response => {
+				console.log(response)
+				if (!response.data.errmsg) {
+					console.log('youre good')
+					this.setState({
+						redirectTo: '/login'
+					})
+				} else {
+					console.log('duplicate')
+				}
+			})
+	}
+	render() {
+		if (this.state.redirectTo) {
+			return <Redirect to={{ pathname: this.state.redirectTo }} />
+		}
+		return (
+			<div className="SignupForm">
+				<h1>Signup form</h1>
+				<label htmlFor="username">Username: </label>
+				<input
+					type="text"
+					name="username"
+					value={this.state.username}
+					onChange={this.handleChange}
+				/>
+				<label htmlFor="password">Password: </label>
+				<input
+					type="password"
+					name="password"
+					value={this.state.password}
+					onChange={this.handleChange}
+				/>
+				<label htmlFor="confirmPassword">Confirm Password: </label>
+				<input
+					type="password"
+					name="confirmPassword"
+					value={this.state.confirmPassword}
+					onChange={this.handleChange}
+				/>
+				<button onClick={this.handleSubmit}>Sign up</button>
+			</div>
+		)
+	}
+}
 
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  
-    handleChangeFirst(event) {
-      this.setState({user.name.first: event.target.user.name.first});
-    }
-
-    handleChangeFirst(event){
-        this.setState()
-    }
-
-    handleChangeLast(event) {
-        this.setState({user.name.last: event.target.user.name.last});
-      }
-    
-      handleChangeEmail(event) {
-        this.setState({user.email: event.target.user.email});
-      }
-
-      handleChangePassword(event) {
-        this.setState({user.name.password: event.target.user.password});
-      }
-  
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
-  
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            First Name
-            <input type="text" value={this.state.user.name.first} onChange={this.handleChangeFirst} />
-          </label>
-
-          <label>
-            Last Name
-            <input type="text" value={this.state.value} onChange={this.handleChangeLast} />
-          </label>
-
-          <label>
-            Email
-            <input type="email" value={this.state.value} onChange={this.handleChangeEmail} />
-          </label>
-
-          <label>
-            Password
-            <input type="text" value={this.state.value} onChange={this.handleChangePassword} />
-          </label>
-
-          <input type="submit" value="Submit" />
-        </form>
-      );
-    }
-  }
+export default SignupForm

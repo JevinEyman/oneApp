@@ -1,33 +1,10 @@
-var passport = require('../passport');
+const express = require('express')
+const router = express.Router()
+const User = require('../models/User.js')
+const passport = require('../passport')
 
-module.exports = function(app){
-
-//Handles User Login/ Auth
-app.post("/createUser",function(req,res){
-
-	//takes in username or email (Or both) AND password
-
-	//save the username and email
-
-
-});
-
-app.post("/login", function(req,res){
-	//takes in username or email and password. Hashes the password and checks if it matches the one on file
-	var email = req.user.email;
-	var password = req.user.password
-
-
-
-	//returns athentication 
-
-});
-
-//google login
-
-
-app.get('/google', passport.authenticate('google', { scope: ['profile'] }))
-app.get(
+router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
+router.get(
 	'/google/callback',
 	passport.authenticate('google', {
 		successRedirect: '/',
@@ -35,39 +12,64 @@ app.get(
 	})
 )
 
-
-
-
-//Discussion handling 
-app.post("/newDiscussion",function(req,res){
-	//needs to take in the title, create an ID, and save it to discussions
+// this route is just used to get the user basic info
+router.get('/user', (req, res, next) => {
+	console.log('===== user!!======')
+	console.log(req.user)
+	if (req.user) {
+		return res.json({ user: req.user })
+	} else {
+		return res.json({ user: null })
+	}
 })
 
-app.post("/newDiscussionPost",function(req,res){
-	//needs to take in the discussion ID posting to, and append to array in Mongo
+router.post(
+	'/login',
+	function(req, res, next) {
+		console.log(req.body)
+		console.log('================')
+		next()
+	},
+	passport.authenticate('local'),
+	(req, res) => {
+		console.log('POST to /login')
+		const user = JSON.parse(JSON.stringify(req.user)) // hack
+		const cleanUser = Object.assign({}, user)
+		if (cleanUser) {
+			console.log(`Deleting ${cleanUser.password}`)
+			delete cleanUser.password
+		}
+		res.json({ user: cleanUser })
+	}
+)
+
+router.post('/logout', (req, res) => {
+	if (req.user) {
+		req.session.destroy()
+		res.clearCookie('connect.sid') // clean up!
+		return res.json({ msg: 'logging you out' })
+	} else {
+		return res.json({ msg: 'no user to log out!' })
+	}
 })
 
-
-//Todo list Handling
-
-app.post("/newTodoList",function(req,res){
-
-	//takes in title the email and the 
-
-
+router.post('/signup', (req, res) => {
+	const { username, password } = req.body
+	User.findOne({ 'username': username }, (err, userMatch) => {
+		if (userMatch) {
+			return res.json({
+				error: `Sorry, already a user with the username: ${username}`
+			})
+		}
+		const newUser = new User({
+			'username': username,
+			'password': password
+		})
+		newUser.save((err, savedUser) => {
+			if (err) return res.json(err)
+			return res.json(savedUser)
+		})
+	})
 })
 
-app.post("/newTodoListPost",function(req,res){
-
-	// takes in 
-
-})
-
-
-
-
-//this is for chat kit
-
-
-	
-}
+module.exports = router

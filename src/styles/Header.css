@@ -1,5 +1,5 @@
 .button {
-    position: absolute; 
+    position: absolute;
     right: 1%;
     background: rgba(8, 156, 182, 0.1);
     background-color: rgba(255, 81, 0, 0.692);
@@ -13,7 +13,7 @@
 }
 
 .header {
-    height:88vh;   
+    height:88vh;
 }
 
 .card {
@@ -42,11 +42,11 @@
 }
 
 #addtodo {
-    position: absolute; 
+    position: absolute;
     bottom: 1%;
-    left: 5%;  
+    left: 5%;
     height: 30px;
-    width: 90%; 
+    width: 90%;
     line-height: 15px;
     text-align: center;
     background: rgba(8, 156, 182, 0.1);
@@ -56,9 +56,25 @@
 }
 
 #addtodospan {
-    position: absolute; 
+    position: absolute;
     right: 1%;
     top: 20%;
+}
+
+.sidebarChat {
+	width: 425%;
+  height: 225%;
+	position: absolute;
+  top: 0;
+	left: -1100px;
+	background: #7fb5d7;
+	transition: all 0.5s ease;
+	padding: 0 15px;
+}
+
+.sidebarChat.showChat {
+	left:100%;
+  z-index: 1;
 }
 
 .head {
@@ -79,7 +95,7 @@
     position: fixed;
     top: 42%;
     left: 50%;
-    transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);
     background-color: white;
     max-width: 100%;
     min-width: 90%;
@@ -89,12 +105,12 @@
 .vertical-center-modal {
     white-space: nowrap;
   }
-  
+
   .vertical-center-modal:before {
     content: '';
     display: inline-block;
   }
-  
+
   .vertical-center-modal .ant-modal {
     display: inline-block;
   }

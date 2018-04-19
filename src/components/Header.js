@@ -16,11 +16,21 @@ class Header extends Component {
       isHidden: true,
       modal2Visible: false,
       ToDoJSON,
-    }
+      visible: true,
+    };
+
+    this.showChat = this.showChat.bind(this);
   }
 
   setModal2Visible(modal2Visible) {
     this.setState({ modal2Visible });
+    console.log("here");
+    console.log(this)
+  }
+
+  showChat(e) {
+      e.preventDefault();
+      this.sidebar.classList.toggle("showChat");
   }
 
   toggleHidden () {
@@ -28,6 +38,13 @@ class Header extends Component {
       isHidden: !this.state.isHidden
     })
   }
+
+  handleCancel = (e) => {
+  console.log(e);
+  this.setState({
+    visible: false,
+  });
+}
 
   onDayClick = (e, day) => {
     this.setState({
@@ -75,7 +92,7 @@ class Header extends Component {
       <div className="card">
         <div className="card-header" id="headingThree">
           <h5 className="mb-0">
-            <button className="btn collapsed head" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <button className="btn collapsed head" onClick={this.showChat} data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               Chat
             </button>
           </h5>
@@ -83,10 +100,21 @@ class Header extends Component {
         <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div className="card-body">
 
-              <Button type="primary" onClick={() => this.setModal2Visible(true)}>Chat</Button>
-              <Modal className="modal" wrapClassName="vertical-center-modal" visible={this.state.Modal2Visible} onCancel={() => this.setModal2Visible(false)} footer={null} maskClosable={true}>
+          <header className="mainHeader">
+              <nav className="noteNav">
+                  <div className="addNewNote" onClick={this.showChat}>
+                      <i className="fas fa-plus"></i>
+                  </div>
+
+              </nav>
+          </header>
+
+        <aside className="sidebarChat" ref={ref => this.sidebar = ref}>
+                <div className="close-btn" onClick={this.showChat}>
+                    <i className="fa fa-times"></i>
+                </div>
                 <Layout />
-              </Modal>
+        </aside>
 
           </div>
         </div>
